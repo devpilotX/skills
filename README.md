@@ -243,16 +243,18 @@ python3 tests/test_memory.py         # 12 checks on the memory tool
 ```
 
 The scorer reports every skill at ten out of ten and names the criterion and reason for any point
-lost. The validator runs 1116 checks: it enforces the skill specification, confirms every referenced
-file exists and every existing file is referenced, compiles every script, and runs the style detector
-across all 184 Markdown files in the repository. The five test files run 99 checks between them. CI
-runs all of it on Python 3.9 and 3.13, on every push and pull request.
+lost. The validator runs 1135 checks: it enforces the skill specification, confirms every referenced
+file exists and every existing file is referenced, compiles every script, runs the style detector
+across all 188 Markdown files in the repository, and fails if any figure quoted in this section has
+drifted from what the tools actually report. The five test files run 99 checks between them. CI runs
+all of it on Python 3.9 and 3.13, on every push and pull request.
 
 The repository holds itself to its own rules, which is the part worth checking if you doubt any of the
-above. Every Markdown file passes the style detector at its strictest level, and the two files that
-have to enumerate the banned patterns declare per rule exemptions that the report prints. Every Python
-file passes `structure_scan.py` at the budgets in `code-craft`, which took refactoring two of the
-older functions rather than raising the limits.
+above. Every Markdown file passes the style detector at its strictest level, and the files that have to
+enumerate the banned patterns in order to document them declare per rule exemptions that the report
+prints, so the list is auditable rather than asserted. Every Python file passes `structure_scan.py` at
+the budgets in `code-craft`, which took refactoring two of the older functions rather than raising the
+limits.
 
 ## What this does not claim
 

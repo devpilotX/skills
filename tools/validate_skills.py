@@ -253,7 +253,7 @@ def check_hygiene() -> None:
                 fail(where, "tab indentation on line %d" % n)
 
 
-def check_style(detector, level: str) -> None:
+def check_style(detector, level: str) -> int:
     targets: list[Path] = []
     for md in sorted(ROOT.rglob("*.md")):
         rel_posix = md.relative_to(ROOT).as_posix()
@@ -264,8 +264,13 @@ def check_style(detector, level: str) -> None:
         targets.append(md)
 
     counts = {"high": 0, "medium": 0, "low": 0}
+    exempt: list[tuple[str, set[str]]] = []
     for md in targets:
-        findings = detector.scan(rel(md), md.read_text(encoding="utf-8"))
+        text = md.read_text(encoding="utf-8")
+        declared = detector.parse_exemptions(text.splitlines())
+        if declared:
+            exempt.append((rel(md), declared))
+        findings = detector.scan(rel(md), text)
         for finding in findings:
             counts[finding.severity] += 1
             message = "[%s] line %d: %s" % (finding.rule, finding.line, finding.detail)
@@ -278,6 +283,13 @@ def check_style(detector, level: str) -> None:
 
     print("style scan: %d markdown files, %d high, %d medium, %d low"
           % (len(targets), counts["high"], counts["medium"], counts["low"]))
+
+    # Printed so the documentation can never quietly disagree with reality about
+    # which files opt out of which rules.
+    print("declared exemptions: %d file(s)" % len(exempt))
+    for path, rules in sorted(exempt):
+        print("  %s: %s" % (path, ",".join(sorted(rules))))
+    return len(targets)
 
 
 def check_readme(all_names: set[str]) -> None:
@@ -297,6 +309,37 @@ def check_readme(all_names: set[str]) -> None:
     for token in set(re.findall(r"skills/([a-z0-9-]+)/", local)):
         if token not in all_names:
             fail("README.md", "references skills/%s/ which does not exist" % token)
+
+
+def check_readme_numbers(markdown_count: int) -> None:
+    """Fail when the README quotes verification figures that no longer hold.
+
+    These numbers are the repository's evidence that its claims are computed, so a
+    stale one is worse than no number at all. Two of them drifted before this check
+    existed. Nothing here calls ok(), because the check compares against the count of
+    passed checks and must not change it.
+    """
+    readme = ROOT / "README.md"
+    if not readme.is_file():
+        return
+    text = readme.read_text(encoding="utf-8")
+
+    stated_md = re.search(r"across all (\d+) Markdown files", text)
+    if stated_md and int(stated_md.group(1)) != markdown_count:
+        fail("README.md", "says %s Markdown files, the scan covers %d"
+             % (stated_md.group(1), markdown_count))
+
+    refs = len([p for p in SKILLS_DIR.rglob("references/*") if p.is_file()])
+    stated_refs = re.search(r"(\d+) reference files", text)
+    if stated_refs and int(stated_refs.group(1)) != refs:
+        fail("README.md", "says %s reference files, there are %d"
+             % (stated_refs.group(1), refs))
+
+    # The negative lookbehind keeps "python3 skills/..." from reading as a count.
+    skills = len([d for d in SKILLS_DIR.iterdir() if d.is_dir()])
+    for claim in set(re.findall(r"(?<![A-Za-z0-9])(\d+) skills\b", text)):
+        if int(claim) != skills:
+            fail("README.md", "says %s skills, there are %d" % (claim, skills))
 
 
 def main(argv: list[str]) -> int:
@@ -330,10 +373,20 @@ def main(argv: list[str]) -> int:
     check_readme(names)
 
     detector = load_detector()
+    markdown_count = 0
     if detector:
-        check_style(detector, args.style_level)
+        markdown_count = check_style(detector, args.style_level)
+    check_readme_numbers(markdown_count)
 
     print("validated %d skills, %d checks passed" % (len(skill_dirs), checks_run))
+
+    readme = ROOT / "README.md"
+    if readme.is_file():
+        stated = re.search(r"validator runs (\d+) checks",
+                           readme.read_text(encoding="utf-8"))
+        if stated and int(stated.group(1)) != checks_run:
+            errors.append("README.md: says the validator runs %s checks, it ran %d"
+                          % (stated.group(1), checks_run))
 
     if warnings:
         print("\n%d warning(s):" % len(warnings))

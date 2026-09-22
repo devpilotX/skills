@@ -154,9 +154,11 @@ function length, nesting depth and parameter count, measured against the budgets
 `skills/code-craft/references/budgets.md`.
 
 A file that has to enumerate the banned patterns declares per rule exemptions in an HTML comment near
-the top, and every lint report prints them. Two files in this repository carry one: this style guide,
-and the comment policy in `code-craft`, which has to quote the leftover work markers it tells you to
-delete. Nothing else opts out of anything.
+the top, and every lint report prints them, so the list is never a claim you have to trust. The files
+that carry one are the ones whose job is documenting the patterns: this style guide, the comment policy
+in `code-craft`, the tone contract in `reality-check`, and the catalogue and worked examples in
+`human-prose`. Each declares only the rules its own quotations trip, and nothing else opts out of
+anything.
 
 ## Honest limits
 

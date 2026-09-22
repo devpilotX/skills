@@ -115,8 +115,9 @@ lines:
 <!-- lint-exempt: vocab,chatter -->
 ```
 
-Exemptions appear in every lint report. Use the fewest rules you can, and only in files whose purpose is
-documenting the patterns. Two files in this repository carry one; nothing else opts out of anything.
+Exemptions appear in every lint report, so run the detector and read the list rather than trusting a
+count written in prose. Use the fewest rules you can, and only in files whose purpose is documenting the
+patterns. A file that opts out of a rule it does not actually trip will be asked to narrow it.
 
 ## References have to be reachable
 

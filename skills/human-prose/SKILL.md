@@ -189,3 +189,19 @@ This skill rewrites prose. It does not judge whether the content is correct, whi
 `reality-check`, and it does not decide document shape or which document type the reader needs, which
 belongs to `doc-forge`. When the problem is that the underlying facts are wrong rather than the
 wording, stop rewriting and hand back to the user.
+
+## Reference material
+
+Load these on demand. Reading all of them at once wastes the context the rewrite needs.
+
+| File | Read it when |
+|---|---|
+| `references/tells-catalogue.md` | You need the full list of markers by category, with what each one looks like |
+| `references/vocabulary.md` | You need the tiered word list, a concrete replacement for a flagged word, or to date a piece of text from which words it overuses |
+| `references/rewrite-method.md` | You are editing text someone else wrote and need to preserve their voice |
+| `references/genre-playbooks.md` | The target is a README, an email, a commit message, marketing copy, a changelog or fiction, where the general rules need adjusting |
+| `references/worked-rewrites.md` | You want the method shown end to end on six passages, including one that should be left alone |
+| `references/calibration.md` | Before telling anyone their text looks generated, or when a rewrite is stripping a document bare |
+
+The source for the pattern list is [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
+CC BY-SA 4.0, reorganised and rewritten here as generative rules.
