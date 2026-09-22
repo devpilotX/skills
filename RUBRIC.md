@@ -122,10 +122,15 @@ checks and still reads as filler.
 
 ## What the rubric cannot check
 
-A file can score ten and still be generic. The checks confirm that the parts are present and the prose
-is clean; they cannot confirm that the procedure produces a better result than the model's default
+A file can score ten and still be generic. This is not a worry, it is a measured result: a skill written
+to be deliberately empty, about an imaginary subject, with the right headings and enough bullets and
+clean prose, scores ten out of ten. The checks confirm that the parts are present and the prose is
+clean; they cannot confirm that the procedure produces a better result than the model's default
 behaviour.
 
 So there is one more test, and it is a judgement call. Read the skill and ask what it stops the model
 from doing. If the answer is nothing, the file is a description of good intentions. Delete it and start
 from the failure it was supposed to prevent.
+
+Treat the score as a floor, not a grade. It says a skill is structurally complete enough to be worth
+reading, and says nothing about whether reading it was worthwhile.

@@ -8,10 +8,12 @@ which produces agreement instead of assessment. The second is convergence, which
 same high probability answer. Fixing only the first gives you a confident, rude, generic answer, which
 is not an improvement.
 
-Every skill in here scores ten out of ten against the rubric in [RUBRIC.md](RUBRIC.md), and the score
-is computed by [tools/score_skills.py](tools/score_skills.py) rather than asserted. Each one names the
-failure it prevents, adapts to whatever project it lands in, carries an ordered procedure, a self
-audit, an off switch, and a statement of what it cannot do.
+Every skill in here scores ten out of ten against the rubric in [RUBRIC.md](RUBRIC.md), computed by
+[tools/score_skills.py](tools/score_skills.py) rather than asserted. Read that as ten structural
+properties verified, because structure is what a script can check: each skill names the failure it
+prevents, adapts to whatever project it lands in, and carries an ordered procedure, a self audit, an
+off switch, and a statement of what it cannot do. Whether a skill earns its place is a judgement no
+script makes, and the rubric ends with the question a reviewer has to answer instead.
 
 Works in [Kiro](https://kiro.dev/docs/skills.md) and in any tool that reads the open
 [Agent Skills specification](https://agentskills.io/specification), including Claude Code.
@@ -241,10 +243,10 @@ python3 tests/test_memory.py         # 12 checks on the memory tool
 ```
 
 The scorer reports every skill at ten out of ten and names the criterion and reason for any point
-lost. The validator runs 1087 checks: it enforces the skill specification, confirms every referenced
+lost. The validator runs 1116 checks: it enforces the skill specification, confirms every referenced
 file exists and every existing file is referenced, compiles every script, and runs the style detector
 across all 184 Markdown files in the repository. The five test files run 99 checks between them. CI
-runs all of it on every push and pull request.
+runs all of it on Python 3.9 and 3.13, on every push and pull request.
 
 The repository holds itself to its own rules, which is the part worth checking if you doubt any of the
 above. Every Markdown file passes the style detector at its strictest level, and the two files that
@@ -264,9 +266,11 @@ not where it came from. Detection is unreliable in both directions, human judgem
 chance, and classifier tools have error rates that matter, which is why Wikipedia tells its own editors
 not to depend on them. Where authorship must be disclosed, disclose it.
 
-Ten out of ten means ten mechanical criteria passed. A file can pass all ten and still be generic, so
-the rubric ends with a judgement no script can make: read the skill and ask what it stops the model
-from doing. That question is in [RUBRIC.md](RUBRIC.md) alongside the criteria.
+Ten out of ten means ten mechanical criteria passed, and nothing more. An intentionally empty skill
+with the right headings, enough bullets and clean prose scores ten as well, which was tested rather
+than assumed. So the rubric ends with a judgement no script can make: read the skill and ask what it
+stops the model from doing. That question is in [RUBRIC.md](RUBRIC.md) alongside the criteria, and it
+is the one worth applying to anything here you are relying on.
 
 There is no measurable score out of ten for a prompt, a document, or an idea. Any such number is
 invented, so `prompt-forge` reports a defect count instead.
