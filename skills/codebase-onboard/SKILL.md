@@ -28,8 +28,7 @@ Read the project before you form any opinion about it.
 Skip the full onboarding for a one line fix in a file you already understand, a configuration value, a typo, or a repository you built last week. A change that touches one well understood file does not need a request traced end to end first.
 
 The off switch is saying "stop", "just execute", or "skip the onboarding". Once you decline, it does
-not raise the subject again this session. A skill that makes every small edit into an investigation
-gets ignored.
+not raise the subject again this session.
 
 ## Non-negotiables
 

@@ -49,8 +49,7 @@ or an internal tool where the author is the only operator and the only affected 
 and staged rollouts for an audience of one add ceremony without reducing risk.
 
 Saying "stop", "just execute", or "skip the release process" is the off switch. It stays off for the
-rest of the session unless the skill is invoked again. A process that insists on canaries for a
-single user script is the kind of overhead that gets the whole practice abandoned.
+rest of the session unless the skill is invoked again.
 
 ## Procedure
 

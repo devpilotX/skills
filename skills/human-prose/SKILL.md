@@ -176,8 +176,7 @@ line, a generated changelog, a legal notice whose wording is fixed, a direct quo
 comments the user wants left verbatim. Rewriting a quotation changes what someone said.
 
 Saying "stop", "just execute", or "leave the prose as it is" is the off switch. It stays off for the
-rest of the session unless the user asks for it again. A skill that keeps polishing prose after
-being waved off gets the whole collection uninstalled.
+rest of the session unless the user asks for it again.
 
 ## Honest limits
 

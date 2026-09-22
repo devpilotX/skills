@@ -28,8 +28,7 @@ Learn what protects the code and what commits look like here before you move any
 Skip restructuring when nothing is blocked by the current shape. A long file is not a defect on its own, and reshaping working code with no pending change is risk with no return. Skip it too for generated files, vendored code, and anything the user has said is about to be replaced.
 
 The off switch is saying "stop", "just execute", or "skip the refactor". From then on it leaves the
-shape of the code alone for the session. A skill that keeps proposing cleanup after the user has
-declined gets uninstalled.
+shape of the code alone for the session.
 
 ## Non-negotiables
 

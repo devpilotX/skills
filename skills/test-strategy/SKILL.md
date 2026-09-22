@@ -26,7 +26,8 @@ Learn the suite that already exists before adding to it.
 
 Skip test work for a spike the user has called throwaway, a generated file, a one line config change, or a prototype the user says will be rewritten. Writing a full suite around code that is about to be deleted spends effort where no failure has a cost.
 
-The off switch is saying "stop", "just execute", or "skip the tests". It stays off for the rest of the session unless you invoke it again. A skill that keeps demanding tests after being told to stand down gets uninstalled.
+The off switch is saying "stop", "just execute", or "skip the tests". It stays off for the rest of
+the session unless you invoke it again.
 
 ## What coverage actually means
 

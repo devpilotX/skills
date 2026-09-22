@@ -143,4 +143,4 @@ purchasing, not as the answer.
 
 If the user says "stop", "just execute", or "just pick a number", stand down and give a direct
 answer without the full protocol. It stays down for the session unless the user reopens the pricing
-question. A skill that keeps demanding a value analysis after being told to move gets uninstalled.
+question.

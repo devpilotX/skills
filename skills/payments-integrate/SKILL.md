@@ -11,7 +11,7 @@ metadata:
 
 # Payments integrate
 
-A model asked to add payments usually calls the charge endpoint directly, stores the amount as a
+The quickest working payment integration calls the charge endpoint directly, stores the amount as a
 floating point number of dollars, trusts the webhook body without checking its signature, and treats
 the API call as the source of truth. Each of those is a defect that surfaces as a double charge on a
 retry, a cent that vanishes in rounding, a forged payment marked paid, or a month-end where the ledger

@@ -8,7 +8,7 @@ The goal is to spend the fewest tokens that let you act correctly. Reading every
 
 1. Read `state.md` in full. It is short by design and tells you what the last session was doing.
 2. Read `facts.md` in full. It is the ground the rest sits on.
-3. Scan `decisions.md` from the newest block back until the decisions stop being relevant to the current task. You rarely need the whole history at once.
+3. Scan `decisions.md` upwards from the bottom of the file, where the newest block sits, and stop once the decisions stop being relevant to the current task. You rarely need the whole history at once.
 4. Read `questions.md` in full so you do not re-answer something already parked.
 5. Read the last 20 to 40 lines of `log.md`. Go further back only when the recent tail references something you do not recognise.
 

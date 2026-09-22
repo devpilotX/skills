@@ -151,8 +151,7 @@ user called a draft. Forcing a chat reply into README structure wastes the reade
 one sentence answer under headings.
 
 Saying "stop", "just execute", or "skip the docs" is the off switch. It stays off for the rest of
-the session unless the user asks again. A skill that keeps reformatting a note nobody wanted
-formatted gets uninstalled.
+the session unless the user asks again.
 
 ## Honest limits
 

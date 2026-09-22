@@ -156,8 +156,7 @@ already has a working one command checkout and a fast loop. Adding a monorepo to
 to a project that runs fine is cost with no return.
 
 Saying "stop", "just execute", or "skip the tooling" is the off switch. It stays off for the rest of
-the session unless the user asks again. Tooling advice that keeps arriving unbidden is the fastest way
-to get the whole collection uninstalled.
+the session unless the user asks again.
 
 ## Honest limits
 

@@ -87,5 +87,4 @@ This skill speeds discovery and clears the blocks that stop indexing; it cannot 
 It does not cover ranking a page once indexed, backlinks, or content strategy. Getting cited by AI answer engines belongs to `llm-visibility`, and the on-page and canonical work for ranking belongs to `seo-optimize`. Recrawl timing is a rule of thumb from common engine behaviour and varies with each site's crawl rate.
 
 If the user says "stop", "just execute", or "skip the diagnosis", that is the off switch. Do only
-what was asked and stand down. Nothing is re-raised for the session unless the user asks. A skill
-that keeps diagnosing after being declined gets uninstalled.
+what was asked and stand down. Nothing is re-raised for the session unless the user asks.

@@ -155,5 +155,4 @@ alerts into a monitoring system is work that `observability-setup` covers.
 ## Off switch
 
 If the user says "stop", "just execute", or "skip the queue review", stand down and make only the
-change asked for. That stands for the session unless the skill is invoked again. A skill that keeps
-imposing structure after being declined gets uninstalled.
+change asked for. That stands for the session unless the skill is invoked again.

@@ -28,8 +28,7 @@ Learn how to run and observe the thing before you touch a line of it.
 Skip the full method for a one line typo with an obvious cause, a message the error text explains outright, or a case the user has already diagnosed and only wants typed out. Running a six step investigation on a missing import wastes the user's time.
 
 The off switch is saying "stop", "just execute", or "skip the investigation". After that it holds
-for the session unless you reopen the investigation. A skill that insists on a reproduction after
-the user has waved it off gets uninstalled.
+for the session unless you reopen the investigation.
 
 ## Non-negotiables
 

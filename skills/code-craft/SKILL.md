@@ -44,7 +44,7 @@ vendored dependency, or a script the user has already called throwaway. Reformat
 not asked to touch turns a small review into a large one and hides the real change in the diff.
 
 Saying "stop", "just execute", or "skip the cleanup" is the off switch. It stays off for the rest of
-the session unless invoked again. A skill that nags gets uninstalled.
+the session unless invoked again.
 
 ## Non-negotiables
 

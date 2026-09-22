@@ -66,10 +66,10 @@ FILE_HEADERS = {
     ),
     "decisions.md": (
         "# Decisions\n\n"
-        "One decision per block, newest at the top. Each carries a date, the\n"
-        "choice, the reason, and the alternatives that were rejected. A decision\n"
-        "is never edited in place; a reversal is a new dated block that names the\n"
-        "one it overturns.\n"
+        "One decision per block, newest at the bottom, because entries are\n"
+        "appended. Each carries a date, the choice, the reason, and the\n"
+        "alternatives that were rejected. A decision is never edited in place; a\n"
+        "reversal is a new dated block that names the one it overturns.\n"
     ),
     "state.md": (
         "# Current state\n\n"

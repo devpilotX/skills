@@ -145,5 +145,4 @@ test too underpowered to detect anything.
 ## Off switch
 
 If the user says "stop", "just execute", or "just ship it", stand down and stop pushing the full
-protocol. Nothing further is pushed for the session unless the user asks for the protocol. A skill
-that keeps demanding a power calculation after being told to move gets uninstalled.
+protocol. Nothing further is pushed for the session unless the user asks for the protocol.

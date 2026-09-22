@@ -159,5 +159,4 @@ exact interval rather than trusting the shortcut.
 
 If the user says "stop", "just execute", or "skip the analysis", stand down and do the direct task
 without the full protocol. That decision holds for the session unless the user asks for the method
-again. A skill that keeps interrogating data after being told to move on gets the whole collection
-uninstalled.
+again.

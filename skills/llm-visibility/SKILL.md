@@ -88,4 +88,4 @@ Classic crawlability, indexation, titles, and page experience for blue link rank
 
 If the user says "stop", "just execute", or "skip the visibility audit", that is the off switch. Do
 only what was asked and stand down. The session continues without it unless the user reopens the
-question. A skill that keeps pushing after being declined gets uninstalled.
+question.

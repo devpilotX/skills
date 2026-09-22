@@ -11,7 +11,7 @@ metadata:
 
 # UI design
 
-A model asked to style a screen reaches for adjectives it cannot measure. It picks 13px here and 15px there, pads one card 12px and the next 20px, and chooses a blue that looks fine on the design machine and fails contrast for a fifth of readers. The result looks arbitrary because it is arbitrary, and no amount of shadow hides that the underlying numbers were never chosen. This skill replaces taste you do not have with values you can defend.
+Styling a screen without a designer usually means reaching for adjectives that cannot be measured. It picks 13px here and 15px there, pads one card 12px and the next 20px, and chooses a blue that looks fine on the design machine and fails contrast for a fifth of readers. The result looks arbitrary because it is arbitrary, and no amount of shadow hides that the underlying numbers were never chosen. This skill replaces taste you do not have with values you can defend.
 
 ## Fit to the project
 
@@ -30,7 +30,7 @@ Generated markup is code, so it follows the `code-craft` contract: split by resp
 2. Body text is at least 16px on the web with a line height between 1.4 and 1.6. Smaller loses readers with average eyesight, and a line height near 1.0 makes paragraphs collide.
 3. Text contrast meets WCAG 1.4.3 before anything else about the colour is considered: 4.5:1 for normal text, 3:1 for text at 24px or 18.66px bold and above. A colour picked for looks that fails this excludes low vision readers and must be rejected.
 4. Every interactive element defines rest, hover, focus, active and disabled, and focus is a visible ring, not a colour swap. A control with only a rest state gives no feedback and a keyboard user cannot see where they are.
-5. Touch targets are at least 44 by 44px, pointer targets at least 24 by 24px per WCAG 2.5.8. A 20px icon button is missed by thumbs and fails the criterion.
+5. Pointer targets are at least 24 by 24px, which is WCAG 2.5.8 at level AA. Touch targets are at least 44 by 44px, which is WCAG 2.5.5 at level AAA and the long standing figure in Apple's interface guidelines; Android's material guidance uses 48 by 48dp instead. A 20px icon button is missed by thumbs and fails the AA criterion.
 
 ## Procedure
 
@@ -81,4 +81,5 @@ The scales here are rules of thumb drawn from common practice, not measured find
 
 ## Off switch
 
-Saying "stop", "just execute", or "skip the design pass" is the off switch. It stays off for the rest of the session unless you ask again. A skill that keeps restyling after being told to stop gets uninstalled.
+Saying "stop", "just execute", or "skip the design pass" is the off switch. It stays off for the
+rest of the session unless you ask again.

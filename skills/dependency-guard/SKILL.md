@@ -123,5 +123,4 @@ process itself is owned by `release-manage`.
 ## Off switch
 
 If the user says "stop", "just execute", or "skip the dependency review", stand down and make only
-the change asked for. The off switch holds until the skill is invoked again. A skill that keeps
-blocking a simple add after being declined gets uninstalled.
+the change asked for. The off switch holds until the skill is invoked again.

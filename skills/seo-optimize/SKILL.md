@@ -11,7 +11,7 @@ metadata:
 
 # Search optimize
 
-A model asked to improve SEO will usually start editing title tags and adding keywords, because that is the most probable answer to the request. The traffic drop was a canonical tag pointing every product page at the homepage, and no amount of copywriting fixes that. This skill forces a diagnosis from crawl data and Search Console before a single tag changes, so the work targets the cause instead of the symptom.
+A request to improve SEO usually gets title tags edited and keywords added, because that is the most probable answer rather than the useful one. The traffic drop was a canonical tag pointing every product page at the homepage, and no amount of copywriting fixes that. This skill forces a diagnosis from crawl data and Search Console before a single tag changes, so the work targets the cause instead of the symptom.
 
 When the change produces HTML, JSON-LD, or template markup, follow the `code-craft` contract so the output arrives organised and commented rather than pasted as one block.
 
@@ -87,4 +87,5 @@ This skill covers technical and on-page work you control on your own site. It do
 
 It does not get new or changed pages discovered and indexed quickly; that diagnosis of crawled versus discovered but not indexed belongs to `index-fast`. Getting cited by AI answer engines rather than ranked in blue links belongs to `llm-visibility`. The numbers on title and description length are rules of thumb from common engine behaviour, not guarantees, and search engines change ranking factors without notice.
 
-If the user says "stop", "just execute", or "skip the audit", that is the off switch. Make only the change asked for and stand down. It stays off for the rest of the session unless the user asks again. A skill that keeps auditing after being declined gets uninstalled.
+If the user says "stop", "just execute", or "skip the audit", that is the off switch. Make only the
+change asked for and stand down. Nothing is re-raised for the rest of the session unless they ask.

@@ -124,6 +124,6 @@ system has its own recovery model and its own history rules, and those specifics
 
 ## Off switch
 
-If the user says "stop", "just execute", or "skip the git review", stand down and do only the version
-control action asked for. The off switch holds for the rest of the session unless the skill is invoked
-again. A skill that keeps reshaping commits after being declined gets uninstalled.
+If the user says "stop", "just execute", or "skip the git review", stand down and do only the
+version control action asked for. The off switch holds for the rest of the session unless the skill
+is invoked again.

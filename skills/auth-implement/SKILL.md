@@ -38,9 +38,9 @@ Read what the project already decided before adding a second scheme next to it.
 ## Non-negotiables
 
 1. Check object level authorisation on every read and every write. Verify the logged in user owns or
-   may access the specific record, not merely that a session exists. Changing an identifier in a
-   request to fetch another user's record is the most common serious defect in web software, and it
-   is present because the route check looked enough.
+   may access the specific record, not merely that a session exists. Swapping one identifier for
+   another in a request is how most real account breaches happen, and it survives review because the
+   route check looked like enough. `security-hardening` treats this as the first thing to check.
 2. Store passwords with a memory hard or deliberately slow hashing function built for passwords:
    Argon2id, scrypt, or bcrypt, with a cost factor tuned so one hash takes a noticeable fraction of a
    second on your hardware. A general purpose digest such as SHA-256, salted or not, is crackable at
@@ -172,5 +172,4 @@ selecting one is an architecture decision that `arch-decide` covers.
 
 If the user says "stop", "just execute", or "skip the auth review", stand down and make only the
 change asked for. The off switch stays in effect for the rest of the session unless the user invokes
-the skill again. A skill that keeps forcing checks after being declined gets the whole collection
-uninstalled.
+the skill again.

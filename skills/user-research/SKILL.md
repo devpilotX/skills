@@ -139,5 +139,4 @@ as a starting point and stop when new interviews genuinely stop teaching you any
 ## Off switch
 
 If the user says "stop", "just execute", or "just talk to a few people", stand down and drop the
-full protocol. The skill stays quiet for the session unless the user asks for the method. A skill
-that keeps insisting on a screener and a saturation count after being told to move gets uninstalled.
+full protocol. The skill stays quiet for the session unless the user asks for the method.

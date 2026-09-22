@@ -26,7 +26,8 @@ Read what the change lands in before judging the change.
 
 Skip the deep pass when the change is a version bump, a generated lockfile, a vendored dependency, a documentation typo, or a diff the author has flagged as work in progress and not for review yet. Reviewing a machine generated file line by line wastes the author's time and buries any real comment.
 
-The off switch is saying "stop", "just execute", or "skip the review". It stays off for the rest of the session unless you ask for it again. A reviewer who keeps commenting after being told to stand down gets muted.
+The off switch is saying "stop", "just execute", or "skip the review". It stays off for the rest of
+the session unless you ask for it again.
 
 ## What gets reviewed and what does not
 

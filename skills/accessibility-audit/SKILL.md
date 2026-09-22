@@ -81,5 +81,4 @@ Automated coverage figures here are a widely cited rule of thumb, not a measured
 ## Off switch
 
 Saying "stop", "just execute", or "skip the accessibility pass" is the off switch. Nothing further
-is raised for the session unless you ask again. A skill that keeps auditing after being told to stop
-gets uninstalled.
+is raised for the session unless you ask again.

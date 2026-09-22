@@ -81,5 +81,4 @@ The rule of three and the layer count are rules of thumb from common practice, n
 ## Off switch
 
 Saying "stop", "just execute", or "no system, just a stylesheet" is the off switch. That holds for
-the session unless you reopen it. A skill that keeps pushing tokens onto a project that does not
-need them gets uninstalled.
+the session unless you reopen it.

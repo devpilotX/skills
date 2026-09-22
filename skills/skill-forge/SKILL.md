@@ -26,7 +26,7 @@ Read the repository's own standard before writing, because it enforces itself me
 1. Name the failure before writing anything else. If you cannot say in two sentences what a competent person or a defaulting model gets wrong here, the skill has no subject and every later section will be filler. This is the test the rubric itself cannot mechanize, so it is on you.
 2. Write the structure before the prose: the steps, the non-negotiables, the audit questions, then the sentences. Prose written first and fitted to the checks afterward reads as padding and scores as a stub on the parts that matter.
 3. Split the main file from the references by when the reader needs each. What applies every time stays in the main file; lookup tables, worked examples, and domain detail move to references. A main file that carries everything stops getting read, which is the failure the split prevents.
-4. Write trigger phrases from how people complain, not how an engineer indexes. Someone with the problem types "site is slow", not "latency percentile regression". Ten phrases in the wrong register means the skill never activates, so it never runs.
+4. Write trigger phrases from how people complain, not how an engineer indexes. Someone with the problem types "I got charged twice", not "idempotent write violation". Ten phrases in the wrong register means the skill never activates, so it never runs.
 5. Fix findings rather than working around them. The style detector at its strictest must report nothing, and declaring a lint exemption to pass is banned outside the files that document the patterns. An exemption taken to hit the score hides the residue the check exists to remove.
 
 ## Procedure
