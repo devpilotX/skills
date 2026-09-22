@@ -1,0 +1,8 @@
+# The style checks fail on CRLF, so normalise on the way in and out.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
+*.zip binary
