@@ -1,0 +1,68 @@
+name: release
+
+on:
+  release:
+    types: [published]
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to attach the zips to"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # Never publish an artifact that has not passed the checks.
+      - name: Detector tests
+        run: python3 tests/test_ai_tells.py
+
+      - name: Converter tests
+        run: python3 tests/test_md2doc.py
+
+      - name: Scorer tests
+        run: python3 tests/test_score_skills.py
+
+      - name: Structure linter tests
+        run: python3 tests/test_structure_scan.py
+
+      - name: Memory tool tests
+        run: python3 tests/test_memory.py
+
+      - name: Validate skills
+        run: python3 tools/validate_skills.py
+
+      - name: Score skills against the rubric
+        run: python3 tools/score_skills.py
+
+      - name: Structure budgets
+        run: python3 skills/code-craft/scripts/structure_scan.py skills tools tests --ext py
+
+      - name: Build zips
+        run: bash tools/build_dist.sh
+
+      - name: Attach zips to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${{ github.event.release.tag_name || inputs.tag || github.ref_name }}"
+          echo "attaching assets to $tag"
+          gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create "$tag" --repo "$GITHUB_REPOSITORY" \
+                 --title "$tag" --notes "Automated build for $tag."
+          gh release upload "$tag" dist/*.zip dist/SHA256SUMS.txt \
+            --clobber --repo "$GITHUB_REPOSITORY"
+          echo "attached:"
+          gh release view "$tag" --repo "$GITHUB_REPOSITORY" --json assets \
+            --jq '.assets[] | "  \(.name)  \(.size) bytes"'

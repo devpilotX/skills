@@ -1,0 +1,61 @@
+name: ci
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.9 is the floor the scripts target, 3.13 guards against future breakage.
+        python-version: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Detector tests
+        run: python3 tests/test_ai_tells.py
+
+      - name: Converter tests
+        run: python3 tests/test_md2doc.py
+
+      - name: Scorer tests
+        run: python3 tests/test_score_skills.py
+
+      - name: Structure linter tests
+        run: python3 tests/test_structure_scan.py
+
+      - name: Memory tool tests
+        run: python3 tests/test_memory.py
+
+      - name: Validate skills
+        run: python3 tools/validate_skills.py
+
+      # Every skill has to score ten out of ten, so the README claim stays true.
+      - name: Score skills against the rubric
+        run: python3 tools/score_skills.py
+
+      # The repository holds itself to the budgets that code-craft sets.
+      - name: Structure budgets
+        run: python3 skills/code-craft/scripts/structure_scan.py skills tools tests --ext py
+
+      - name: Build distributable zips
+        run: bash tools/build_dist.sh
+
+      - name: Upload zips
+        uses: actions/upload-artifact@v4
+        with:
+          name: skills-py${{ matrix.python-version }}
+          path: dist/*.zip
+          if-no-files-found: error
